@@ -77,11 +77,12 @@ while True:
 """
         md = Markdown(md_text)
         console.print(md)
+        # Ввод числа пользователем
         prnum1=int(input("Введите 1 число: "))
         prnum2=int(input("Введите 2 число: "))
-
+        # Выбор действия
         devv=input("Введите само действие: ")
-
+        # Логика программы
         devv2=devv.lower()
         if devv2 == "lumos" or devv2 =="nox" or devv2=="geminio" or devv=="diffindo":
             if devv2 == "lumos":
@@ -118,3 +119,21 @@ while True:
 """
         md3 = Markdown(md_text3)
         console3.print(md3)
+        num = int(input("Введите число: "))
+    # Проверка на проклятие
+    proclat = 0
+    if num % 2 == 0:
+        proclat = 1 #Если артефакт проклят, то мы записываем в переменную один
+    else:
+        proclat = 0 # Если же артефакт не проклят, то мы записываем в переменную ноль
+    print(proclat)
+    if num >= 0:
+        magic=1 # Если число положительное, то магия стабильна, то записываем в пееременную 1
+    else:
+        magic=0 # Если магия не стабильная, то записываем в переменную 0
+    if proclat == 1:
+        print("Вывод: Артефакт проклят!")
+    elif magic == 0:
+        print("Вывод: Магия нестабильна!")
+    elif proclat == 0 and magic == 1:
+        print("Вывод: Артефакт безопасен.")
