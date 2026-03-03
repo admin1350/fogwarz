@@ -1,5 +1,4 @@
-from rich.console import Console
-from rich.markdown import Markdown
+
 
 # console = Console()
 # md_text = """
@@ -12,15 +11,10 @@ from rich.markdown import Markdown
 # console.print(md)
 
 
-
-
-
-
-
-
-
 #  Импорт завимимостей
 import random
+from rich.console import Console
+from rich.markdown import Markdown
 
 # Основное меню
 print("=== Магический терминал Хогвартса === =")
@@ -39,6 +33,7 @@ if vibor == 1:
     rannum = random.randint(1, 100)
     console1 = Console()
     md_text1 = """
+# 1️⃣ Математический калькулятор
 **Логика**
 - Программа загадывает число от 1 до 100 (сила заклинания)
 - Пользователь пытается угадать
@@ -49,11 +44,50 @@ if vibor == 1:
 """
     md1 = Markdown(md_text1)
     console1.print(md1)
-    n = int(input("Введи"))
+    n = int(input("Введите число от 1 до 100: "))
     if n < rannum:
         print("Слишком слабое заклинание!")
     elif n > rannum:
         print("Слишком мощная магия!")
     elif n == rannum:
         print("Ты настоящий волшебник!")
+
+ # программа 2 Магичекий калькулятор
+if vibor == 2:
+    console = Console()
+    md_text = """
+# 2️⃣ **Магический калькулятор**
+- Пользователь вводит два числа
+- Выбирает заклинание (операцию):
+    - Lumos (сложение)
+    - Nox (вычитание)
+    - Geminio (умножение)
+    - Diffindo (деление)
+- Выводится результат
+- Проверка деления на ноль
+"""
+    md = Markdown(md_text)
+    console.print(md)
+    prnum1=int(input("Введите 1 число: "))
+    prnum2=int(input("Введите 2 число: "))
+
+    devv=input("Введите само действие: ")
+
+    devv2=devv.lower()
+    if devv2 == "lumos" or devv2 =="nox" or devv2=="geminio" or devv=="diffindo":
+        if devv2 == "lumos":
+            res2=prnum1+prnum2
+        elif devv2 == "nox":
+            res2=prnum1-prnum2
+        elif devv2 == "geminio":
+            res2=prnum1*prnum2
+        elif devv2 == "diffindo":
+            if prnum2 == 0:
+                res2=("На ноль делить нельзя!")
+            else:
+                res2=prnum1/prnum2
+        print('Ответ:',res2)
+    else:
+        print("Такого действия не существует, проверьте правильность дествия!!!!")
+    
 
