@@ -1,5 +1,5 @@
-# from rich.console import Console
-# from rich.markdown import Markdown
+from rich.console import Console
+from rich.markdown import Markdown
 
 # console = Console()
 # md_text = """
@@ -35,10 +35,21 @@ vibor=int(input("Напишите 0-3 из меню сверху: "))
 
 # программа 1 угадай заклинание
 if vibor == 1:
-    print("Логика ")
-    rannum = random.randint(1, 100)
-    n = int(input())
 
+    rannum = random.randint(1, 100)
+    console1 = Console()
+    md_text1 = """
+**Логика**
+- Программа загадывает число от 1 до 100 (сила заклинания)
+- Пользователь пытается угадать
+- Вывод подсказок:
+    - Если число меньше загаданного → "Слишком слабое заклинание!"
+    - Если число больше загаданного → "Слишком мощная магия!"
+    - Если угадал → "Ты настоящий волшебник!"
+"""
+    md1 = Markdown(md_text1)
+    console1.print(md1)
+    n = int(input("Введи"))
     if n < rannum:
         print("Слишком слабое заклинание!")
     elif n > rannum:
