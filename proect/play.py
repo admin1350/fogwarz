@@ -12,11 +12,42 @@
 
 
 #  Импорт завимимостей
-import random
+import random, math, time
 from rich.console import Console
 from rich.markdown import Markdown
 
-# Основное меню
+# Логика выбора факультета
+print("Надень шляпу, о Юный Маг!")
+time.sleep(1)
+print("Начинаю рАсПрЕдЕлЕнИе")
+time.sleep(6)
+facultet = random.randint (1,4)
+if facultet == 1:
+    print("И вы попадаете к....")
+    time.sleep(3)
+    print("Факультет Гриффендор!")
+
+elif facultet == 2:
+    print("И вы попадаете к....")
+    time.sleep(3)
+    print("Факультет Слизерин")
+elif facultet == 3:
+    print("И вы попадаете к....")
+    time.sleep(3)
+    print("Факультет Когтеврана")
+elif facultet == 4:
+    print("И вы попадаете к....")
+    time.sleep(3)
+    print("Факультет Пуфендуй")
+global event
+global grifendor
+global slizerin 
+global kogtevran 
+global puffendui 
+global score
+score = 0
+event = random.randint(1,3)
+
 
 
 
